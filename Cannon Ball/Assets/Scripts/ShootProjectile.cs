@@ -21,11 +21,14 @@ public class ShootProjectile : MonoBehaviour
             var projectile = Instantiate(cannonBall, launchPointRight.position, launchPointRight.rotation);
             projectile.GetComponent<Rigidbody>().velocity = launchPointRight.up * launchVelocity;
             rb.AddForce(transform.right * thrust);
+            AudioManager.obj.playShot();
         }
         if (Input.GetButtonDown("Fire2"))
         {
             var projectile = Instantiate(cannonBall, launchPointLeft.position, launchPointLeft.rotation);
             projectile.GetComponent<Rigidbody>().velocity = launchPointLeft.forward * launchVelocity;
+            AudioManager.obj.playShot();
+
         }
     }
 }

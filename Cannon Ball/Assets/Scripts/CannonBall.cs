@@ -17,6 +17,7 @@ public class CannonBall : MonoBehaviour
     {
         Explosion();
         Destroy(gameObject);
+        AudioManager.obj.playHit();
     }
     void Explosion()
     {
