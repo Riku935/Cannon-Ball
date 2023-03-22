@@ -21,7 +21,7 @@ public class CannonBall : MonoBehaviour
     }
     void Explosion()
     {
-        //GameObject _explosion = Instantiate(explosion, transform.position, transform.rotation);
+        GameObject _explosion = Instantiate(explosion, transform.position, transform.rotation);
         Collider[] _colliders = Physics.OverlapSphere(transform.position, fieldOfImpact);
         foreach (Collider target in _colliders)
         {
@@ -31,7 +31,7 @@ public class CannonBall : MonoBehaviour
                 rb.AddExplosionForce(explosionForce, transform.position, fieldOfImpact);
             }
         }
-        //Destroy(_explosion, 3f);
+        Destroy(_explosion, 3f);
 
     }
 }

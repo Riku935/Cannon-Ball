@@ -7,7 +7,7 @@ public class Ui : MonoBehaviour
     public GameObject panelGame;
     void Start()
     {
-        //Time.timeScale = 0;
+        Time.timeScale = 0;
     }
 
     void Update()
@@ -19,5 +19,6 @@ public class Ui : MonoBehaviour
     {
         Time.timeScale = 1;
         panelGame.SetActive(false);
+        GameManager.obj.gameReady = true;
     }
 }
